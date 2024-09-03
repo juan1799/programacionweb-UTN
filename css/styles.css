@@ -1,0 +1,17 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body{
+    background-color:blanchedalmond;
+}
+
+.pagination{
+  display: flex;
+  flex-direction: row;
+}
