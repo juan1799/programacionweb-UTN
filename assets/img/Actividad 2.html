@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://127.0.0.1:5500/?lastName=medina&name=nando&dni=123 -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    
+    <title>Actividad 2</title>
+<link rel="shortcut icon" href="http://127.0.0.1:5500/assets/img/logo-js.png" type="image/x-icon"><link rel="stylesheet" href="./Actividad 2_files/styles.css"><link rel="stylesheet" href="./Actividad 2_files/bootstrap-icons.min.css"></head>
+<body>
+    <main>
+        
+        <section class="table__header">
+            <h1>Estudiantes </h1>
+            <div>
+                <p>Ingresar nuevo estudiante: </p>
+                <form onsubmit="addPersona(event)">
+                    <label for="lastName">Apellido:</label>
+                    <input type="text" id="lastName" name="lastName" required="" wfd-id="id0">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required="" wfd-id="id1">
+                    <label for="dni">DNI:</label>
+                    <input type="text" name="dni" id="dni" required="" wfd-id="id2">
+                    <button type="submit">Agregar</button>
+                </form> 
+            </div>
+            <div>
+                <p>Buscar estudiante por DNI: </p>
+                <form onsubmit="search(event)">
+                    <label for="searchDNI">DNI:</label>
+                    <input type="text" id="searchDNI" name="searchDNI" required="" wfd-id="id3">
+                    <button type="submit" class="boton"> <span><i class="bi bi-search"></i></span></button>
+                </form>
+            </div>
+
+        </section>
+
+
+        <section class="table__body">
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Apellido</th>
+                        <th>Nombre</th>
+                        <th>dni</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody id="table"><tr key="254"><td>ALBORNOZ</td>
+                         <td>FRANCO</td>
+                         <td>254</td>
+                         <td><button onclick="deleteStudent(0)"><i class="bi bi-trash"></i></button>
+                         </td></tr><tr key="127"><td>MEDINA</td>
+                         <td>JUAN JOSÉ</td>
+                         <td>127</td>
+                         <td><button onclick="deleteStudent(1)"><i class="bi bi-trash"></i></button>
+                         </td></tr><tr key="125"><td>MEDINA</td>
+                         <td>JUAN JOSÉ</td>
+                         <td>125</td>
+                         <td><button onclick="deleteStudent(2)"><i class="bi bi-trash"></i></button>
+                         </td></tr><tr key="124"><td>MEDINA</td>
+                         <td>JUAN JOSÉ</td>
+                         <td>124</td>
+                         <td><button onclick="deleteStudent(3)"><i class="bi bi-trash"></i></button>
+                         </td></tr><tr key="123"><td>MEDINA</td>
+                         <td>JUAN JOSÉ</td>
+                         <td>123</td>
+                         <td><button onclick="deleteStudent(4)"><i class="bi bi-trash"></i></button>
+                         </td></tr></tbody>
+            </table>
+            <nav class="pagination__nav">
+                <ul class="pagination">
+                    <li class="pag-item">
+                        <button onclick="previousPage()"><i class="bi bi-arrow-left-square-fill"></i></button>
+                    </li>
+                    <div id="items"><li class="page-item"><button class="page-link" onclick="pagination(0)">1</button></li><li class="page-item"><button class="page-link" onclick="pagination(1)">2</button></li></div>
+                    <li class="pag-item">
+                        <button onclick="nextPage()"><i class="bi bi-arrow-right-square-fill"></i></button>
+                    </li>
+                </ul>
+            </nav>
+        </section>        
+    </main>
+    <script src="./Actividad 2_files/app.js.descargar"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
